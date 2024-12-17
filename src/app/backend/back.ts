@@ -94,7 +94,7 @@ app.put('/tasks/updateid', async(req: Request, res: Response) => {
   //Update counter
   await client.db('mytasks').collection<CounterDocument>('counters').findOneAndUpdate(
     { _id: "taskId" },  
-    { $set: {sequence_value: count+1} },  
+    { $set: {sequence_value: count} },  
     { returnDocument: ReturnDocument.AFTER }  
   );   
   //-1 all document id below deleted task 
